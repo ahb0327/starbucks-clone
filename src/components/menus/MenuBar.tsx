@@ -42,7 +42,14 @@ export const MenuBar: React.VFC<MenuBarProps> = (props) => {
         }}
       >
         <Container>
-          <div css={{ display: 'flex', flexFlow: 'row wrap' }}>
+          <div
+            css={{
+              display: 'flex',
+              flexFlow: 'row wrap',
+              marginBottom: -10,
+              '> *': { marginBottom: 10 },
+            }}
+          >
             {props.data.submenus[seleteIndex].items.map((item) => (
               <MenuItem title={item.title} subitems={item.subitems} />
             ))}
